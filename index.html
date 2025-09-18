@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- completa -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
     </head>
     <body>
         <!-- SECCIÓ 1 - Capçalera -->
         <header>
-            <!-- completa -->
+            <a href="https://www.uab.cat" target="_blank"> <img src="./img/uab.png" alt="Logo UAB" width="40%"> </a>
+            <h1>Escola Enginyeria</h1>
+            <p>Benvinguts a l'Escola d'Enginyeria</p>
+            <hr>
         </header>
         <!-- SECCIÓ 2 - Llistat dels diferents graus que ofereix l’escola d’enginyeria -->
         <section>
-            <header>
                 <h3>Graus disponibles: </h3>
-            </header>
+
             <ul>
-                <!-- completa -->
+                <li><a href="https://ww.uab.cat/enginyeria" target="_blank">Eng. Informàtica</a>
+                    <ul>
+                        <li>Computadors</li>
+                        <li>ES</li>
+                        <li>Computació</li>
+                        <li>TI</li>
+                    </ul>
+                </li>
+                <li>Eng. Telecos sistemes</li>
+                <li>Eng. Telecos Electrònica</li>
             </ul>
+            <hr>
         </section>
         <!-- SECCIÓ 3 - Formulari de registre -->
         <section>
@@ -24,17 +38,31 @@
             </header>
             <p> Si us plau facilita'ns les teves dades </p>
             <form method="post" action="">
-                <!-- completa -->
+                <label for="nom">Nom:</label> <input type="text" name="nom" id="nom">
+                <br>
+                <label for="pass">Contrassenya:</label><input type="password" name="pass" id="pass">
+                <br>
+                <select name="grau" id="grados">
+                    <option value="1">Eng. Informàtica</option>
+                    <option value="2">Eng. Telecos</option>
+                </select> <br>
+                <input type="submit" value="Registrar-se">
             </form>
             <hr />
         </section>
         <!-- SECCIÓ 4 -  Estadístiques de matriculació per grau -->
         <section>
-            <header>
                 <h3>Estadístiques de matriculació per graus</h3>
-            </header>
             <table border="1">
-                <!-- completa -->
+                <tr>
+                    <th>Escola d'Enginyeria</th>
+                    <th>Ciències</th>
+                </tr>
+                <tr>
+                    <td>Enginyeria Informàtica</td>
+                    <td>Enginyeria Telecos</td>
+                    <td>Enginyeria Quimica</td>
+                </tr>
             </table>
         </section>
         <!-- SECCIÓ 5 - Peu de pàgina -->
