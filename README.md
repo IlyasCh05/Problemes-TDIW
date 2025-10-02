@@ -1,60 +1,31 @@
 # TDIW
 Tecnologies de desenvolupament per a Internet i Web
 
-SESSIÓ DE PROBLEMES 3 – Programació a la banda del client (JavaScript)
+SESSIÓ DE PROBLEMES 3:
+- Layout amb CSS
+- Programació a la banda del client (JavaScript)
 
 ## Requirements
-### Operating System
-Use linux Ubuntu or Fedora 
 
-### Install git
-Ubuntu
-```shell
-sudo apt-get install git -y
-```
+We will use the Apache Server + PHP module you use in the labs:
 
-Fedora
-```shell
-sudo dnf install git -y
-```
+1. Start the fortyclient program.  
+2. Use the VSCode remote connection to connect to the lab using the command:  
+   ```shell
+   ssh -p 170 tdiw-XX@deic-dcX.uab.cat
+   ```
 
-### Install docker
-In this session and the following, we must run containers to perform and test the exercises.
-For our environment, we recommended using docker containers. You can install it with https://docs.docker.com/engine/install/ or use the following script https://github.com/docker/docker-install.git
-```shell
-git clone https://github.com/docker/docker-install.git
-cd docker-install/
-./install.sh
-```
+3. In the public_html directory, create the directory problems.
+    ```text
+    public_html/
+    └── problems/
+    ```
 
-> [!IMPORTANT]  
-> After the installation, add your user to the docker group 
->```shell
->sudo usermod -aG docker ${USER}
->su - ${USER} #You must start a new session to see the change
->```
+4. In the public_html/problems directory, create a directory for each student of the group:
+    ```text
+    public_html/
+    └── problems/
+        ├── student1/
+        └── student2/
+    ```
 
-## Create the environment
-In this repository, you can find the **tdiw.sh** script, which will create an Apache + PHP service via a docker container. 
-To create the environment, just run the **tdiw.sh** script
-```shell
-./tdiw.sh
-```
-
-## List the running containers
-```shell
-docker ps
-```
-
-## Destroy the environment
-> [!CAUTION]
-> This will remove all your running and stop TDIW docker containers
-```shell
-docker rm -v -f $(docker ps -a -q -f name=tdiw)
-```
-
-## Access to the website
-> [!IMPORTANT]  
-> The Apache workdir is the same path where you ran the script; modify the index.php or add more PHP files in the same path where the script was run
-
-[http://localhost](http://localhost)
