@@ -29,3 +29,14 @@ section.statics header h3 {
     color: red;
     
 }
+
+table, td, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+img {
+    float: left;
+    margin-right: 10px;
+    padding: 0 0 0 10px;
+}
