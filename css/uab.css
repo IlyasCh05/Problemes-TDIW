@@ -44,3 +44,31 @@ ul li{ /*perquè les “bullets” quedin alineades amb el text*/
 }
 
 /* completa */
+#layout {
+    display: grid;
+    grid-template-areas: 
+    'titol titol'
+    'grausList registre'
+    'stats stats'
+    'peu peu';
+}
+
+#titol {
+    grid-area:titol;
+}
+
+#grausList {
+    grid-area:grausList;
+}
+
+#registre {
+    grid-area:registre;
+}
+
+#stats {
+    grid-area:stats;
+}
+
+#peu {
+    grid-area:peu;
+}

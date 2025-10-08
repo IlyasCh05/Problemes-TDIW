@@ -6,5 +6,16 @@ function confirmaRegistre(){
 }
 
 async function carregaMencions(){
-    //completa
+    //step 0
+    let grau =document.getElementById("graus").value
+
+    //step 1
+    let response =await fetch('mencions.php?grau='+grau)
+
+    //step 2
+    let options =await response.text()
+
+    //step 3
+    document.getElementById("mencions").innerHTML = options
+
 }
