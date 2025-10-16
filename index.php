@@ -2,14 +2,23 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> UAB/Enginyeria </title>
-	    <link rel="stylesheet" type="text/css" href="css/uab.css">
-	<!-- completa -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/uab.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    	<script src="js/funcions.js"></script>
     </head>
     <body>
         <?php
-		    //completa
+		include_once __DIR__ . "/connectaBD.php";  
+		$con = connectaBD();
+		$query_graus = "SELECT id,nom FROM graus";
+		$resultSet_graus = pg_query($con, $query_graus) or die("Error sql graus");
+		$rows_graus = pg_fetch_all($resultSet_graus);
+		$query_mencions = "SELECT id,nom FROM mencions WHERE grau=1";
+      	$resultSet_mencions = pg_query($con, $query_mencions) or die("Error sql mencions");
+		$rows_mencions = pg_fetch_all($resultSet_mencions);
+      		pg_close($con);
         ?>
         <div id="layout">
             <!-- SECCIÓ 1 - Capçalera -->
@@ -51,13 +60,17 @@
                         Grau:
                         <select name="grau" id="graus">
                         <?php
-                            //completa
+                            foreach($rows_graus as $row){
+                                echo "<option value='" . $row['id'] . "'>" . $row['nom'] . "</option>\n";
+                            }
                         ?>
                         </select>
                         <p>Tria la menció que t'atreu més:<p>
                         <select name="mencio" id="mencions">
                         <?php
-                            //completa
+                                foreach($rows_mencions as $row){
+                                    echo "<option value='" . $row['id'] . "'>" . $row['nom'] . "</option>\n";
+                                }
                         ?>
                         </select>
                         <br /><br />
